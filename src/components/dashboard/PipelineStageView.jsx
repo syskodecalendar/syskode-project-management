@@ -28,7 +28,7 @@ export const PipelineStageView = ({ leads: propLeads, onSelectLead = (_lead) => 
         {stages.map(stg => {
             const matchedLeads = leads.filter(l => stg.statusMatch.includes(l.status));
             const totalVal = matchedLeads.reduce((acc, l) => acc + (l.estimatedProjectValue || 0), 0);
-            return (<div key={stg.key} className="flex flex-col rounded-xl border border-zinc-800/60 bg-zinc-950/40 p-3">
+            return (<div key={stg.key} className="flex flex-col rounded-xl border border-zinc-800/60 bg-white p-3">
               <div className="flex items-center justify-between border-b border-zinc-800 pb-2">
                 <span className="text-xs font-semibold text-zinc-200">
                   {stg.label}
