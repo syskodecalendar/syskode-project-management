@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+body {
+  background-color: #09090b;
+  color: #f4f4f5;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F9FC;
+}
+::-webkit-scrollbar-thumb {
+  background: #B8CFDD;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #86B8D1;
+}
+
+/* --------------------------------------------------------------------------
+   Form readability guard
+   The project uses many white form surfaces. Keep every editable control and
+   label high-contrast even when the browser/OS prefers dark mode.
+   -------------------------------------------------------------------------- */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+textarea,
+select {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  border-color: #cbd5e1 !important;
+  caret-color: #111827 !important;
+}
+input:not([type="checkbox"]):not([type="radio"])::placeholder,
+textarea::placeholder {
+  color: #64748b !important;
+  opacity: 1 !important;
+}
+form label,
+.form-label,
+.bg-white label {
+  color: #111827 !important;
+}
+select option {
+  background: #ffffff;
+  color: #111827;
+}
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive application shell
+   -------------------------------------------------------------------------- */
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+/* White forms must remain readable across light/dark OS settings. */
+.bg-white input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.bg-white textarea,
+.bg-white select,
+form.bg-white input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+form.bg-white textarea,
+form.bg-white select {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+.bg-white label,
+.bg-white .form-label,
+form.bg-white label,
+form.bg-white .form-label {
+  color: #111827 !important;
+}
+
+@media (max-width: 767px) {
+  /* Prevent iOS zoom while keeping controls comfortably tappable. */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  textarea,
+  select {
+    font-size: 16px !important;
+    line-height: 1.35;
+  }
+
+  button,
+  a,
+  select,
+  input,
+  textarea {
+    touch-action: manipulation;
+  }
+
+  /* Tables remain contained inside their own scroll region instead of
+     widening the full application page. */
+  .overflow-x-auto {
+    max-width: 100%;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    white-space: nowrap;
+  }
+
+  td,
+  th {
+    white-space: nowrap;
+  }
+
+  td p,
+  td div,
+  td span {
+    white-space: normal;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Syskode website-aligned application theme
+   Core brand direction: deep navy + technology blue + white/light-blue.
+   The main workspace is intentionally light while navigation stays navy.
+   -------------------------------------------------------------------------- */
+:root {
+  --syskode-navy: #071A35;
+  --syskode-navy-2: #0C2038;
+  --syskode-blue: #00AEEF;
+  --syskode-blue-2: #0788C9;
+  --syskode-page: #F4F9FC;
+  --syskode-soft-blue: #EEF9FF;
+  --syskode-border: #D8E7F0;
+  --syskode-text: #101828;
+  --syskode-muted: #667085;
+}
+
+body {
+  background-color: var(--syskode-page);
+  color: var(--syskode-text);
+}
+
+/* Re-skin legacy dark cards in the workspace without touching the navy sidebar. */
+.syskode-light [class~="bg-zinc-900/60"],
+.syskode-light [class~="bg-zinc-900/80"],
+.syskode-light [class~="bg-zinc-900/70"],
+.syskode-light [class~="bg-zinc-900/40"],
+.syskode-light [class~="bg-zinc-900/30"],
+.syskode-light [class~="bg-zinc-900/90"],
+.syskode-light [class~="bg-zinc-950/60"],
+.syskode-light [class~="bg-zinc-950/50"],
+.syskode-light [class~="bg-zinc-950/80"],
+.syskode-light [class~="bg-zinc-900"],
+.syskode-light [class~="bg-zinc-950"] {
+  background-color: #ffffff !important;
+}
+
+.syskode-light [class~="bg-zinc-800/60"],
+.syskode-light [class~="bg-zinc-800/50"],
+.syskode-light [class~="bg-zinc-800/40"] {
+  background-color: var(--syskode-soft-blue) !important;
+}
+
+.syskode-light [class~="border-zinc-800/80"],
+.syskode-light [class~="border-zinc-800/60"],
+.syskode-light [class~="border-zinc-800/50"],
+.syskode-light [class~="border-zinc-800"],
+.syskode-light [class~="border-zinc-700/80"],
+.syskode-light [class~="border-zinc-700"] {
+  border-color: var(--syskode-border) !important;
+}
+
+.syskode-light [class~="text-zinc-100"],
+.syskode-light [class~="text-zinc-200"] {
+  color: var(--syskode-navy) !important;
+}
+.syskode-light [class~="text-zinc-300"] { color: #344054 !important; }
+.syskode-light [class~="text-zinc-400"],
+.syskode-light [class~="text-zinc-500"] { color: var(--syskode-muted) !important; }
+.syskode-light [class~="text-zinc-600"] { color: #98A2B3 !important; }
+
+.syskode-light .bg-white,
+.syskode-light .dark\:bg-slate-900,
+.syskode-light .dark\:bg-slate-800 {
+  background-color: #ffffff !important;
+}
+.syskode-light .dark\:text-white { color: var(--syskode-navy) !important; }
+.syskode-light .dark\:text-slate-300,
+.syskode-light .dark\:text-slate-400 { color: var(--syskode-muted) !important; }
+.syskode-light .dark\:border-slate-800,
+.syskode-light .dark\:border-slate-700 { border-color: var(--syskode-border) !important; }
+
+.syskode-light [class~="bg-blue-600"] { background-color: var(--syskode-blue-2) !important; }
+.syskode-light [class~="hover:bg-blue-500"]:hover,
+.syskode-light [class~="hover:bg-blue-700"]:hover { background-color: #066FA5 !important; }

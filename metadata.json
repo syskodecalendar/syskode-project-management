@@ -1,0 +1,6 @@
+{
+  "name": "Syskode Project Hub",
+  "description": "Lead, Proposal, Project & QA Management Platform for Syskode Technologies W.L.L.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
